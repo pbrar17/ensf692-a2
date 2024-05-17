@@ -39,6 +39,18 @@ class Sensor:
 # The sensor object should be passed to this function to print the action message and current status
 # Replace these comments with your function commenting
 def print_message(sensor):
+    if(sensor.light == 'red' or sensor.pedestrian == "yes" or sensor.vehicle == "yes"):
+        print('')
+        print("STOP")
+        print('')
+    elif(sensor.light == 'green' and (sensor.pedestrian == "no" or sensor.vehicle == "no")):
+        print('')
+        print("Proceed")
+        print('')
+    elif(sensor.light == 'yellow' and (sensor.pedestrian == "no" or sensor.vehicle == "no")):
+        print('')
+        print("Caution")
+        print('')
     print("Light = " + sensor.light + ", Pedestarian = " + sensor.pedestrian + ", Vehicle = " + sensor.vehicle)
     pass
 
